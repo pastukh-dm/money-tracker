@@ -19,7 +19,7 @@ Button.defaultProps = {
 
 
 export function Button(props: Props) {
-  const content = useMemo(() => props.children || props.text, [])
+  const content = useMemo(() => props.children || props.text, [props.children, props.text]);
   return (
     <button
       className={clsx('Button', `_${props.variant}`)}

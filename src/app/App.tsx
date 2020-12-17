@@ -5,6 +5,7 @@ import { ExpensesPage } from './pages/ExpensesPage/ExpensesPage';
 import { CurrenciesPage } from './pages/CurrenciesPage/CurrenciesPage';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import { AccountsPage } from './pages/AccountsPage/AccountsPage';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
                 <Link to="/expenses">Expenses</Link>
               </li>
               <li>
+                <Link to="/accounts">Accounts</Link>
+              </li>
+              <li>
                 <Link to="/currencies">Currencies</Link>
               </li>
             </ul>
@@ -25,6 +29,9 @@ function App() {
           <Switch>
             <Route path="/expenses">
               <ExpensesPage />
+            </Route>
+            <Route path="/accounts">
+              <AccountsPage />
             </Route>
             <Route path="/currencies">
               <CurrenciesPage />
