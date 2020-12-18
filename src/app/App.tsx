@@ -5,7 +5,7 @@ import { ExpensesPage } from './pages/ExpensesPage/ExpensesPage';
 import { CurrenciesPage } from './pages/CurrenciesPage/CurrenciesPage';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
-import { AccountsPage } from './pages/AccountsPage/AccountsPage';
+import { AccountIndexPage } from './pages/AccountIndexPage/AccountIndexPage';
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
               <ExpensesPage />
             </Route>
             <Route path="/accounts">
-              <AccountsPage />
+              <AccountIndexPage />
             </Route>
             <Route path="/currencies">
               <CurrenciesPage />
