@@ -1,12 +1,12 @@
 import { Currency } from './Currency';
 
-export interface Account {
+export interface MoneyAccount {
   id: string,
   name: string,
   currency: Currency | undefined,
   balance: number
 }
 
-export type AccountRaw = Omit<Account, 'currency'> & {
+export type AccountRaw = Omit<MoneyAccount, 'currency'> & {
   currency: Currency['id'],
 }

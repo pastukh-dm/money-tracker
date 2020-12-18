@@ -1,7 +1,7 @@
 import React, { useCallback, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { Button } from '../../../components/Button/Button';
-import { AccountRaw } from '../../../models/Account';
+import { AccountRaw } from '../../../models/MoneyAccount';
 import { UIDService } from '../../../services/UIDService';
 import { selectAllCurrency } from '../../../store/currency/currencySelectors';
 
