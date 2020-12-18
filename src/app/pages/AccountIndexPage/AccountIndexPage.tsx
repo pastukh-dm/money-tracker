@@ -7,6 +7,7 @@ import { addAccount, deleteAccount } from '../../store/account/accountSlice';
 import { AccountCreateForm } from './components/AccountCreateForm';
 import { AccountList } from './components/AccountList';
 
+
 export function AccountIndexPage() {
   const dispatch = useDispatch();
   const accounts = useSelector(selectAllAccount);
@@ -18,6 +19,7 @@ export function AccountIndexPage() {
   const handleDeleteClick = useCallback(
     (account: MoneyAccount) => dispatch(deleteAccount(account.id)), [dispatch]
   );
+
 
   return (
     <Page>

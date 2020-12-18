@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
-import { ExpensesPage } from './pages/ExpensesPage/ExpensesPage';
 import { CurrenciesPage } from './pages/CurrenciesPage/CurrenciesPage';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import { AccountIndexPage } from './pages/AccountIndexPage/AccountIndexPage';
+import { TransactionIndexPage } from './pages/TransactionIndexPage/TransactionIndexPage';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <nav>
             <ul>
               <li>
-                <Link to="/expenses">Expenses</Link>
+                <Link to="/transactions">Transactions</Link>
               </li>
               <li>
                 <Link to="/accounts">Accounts</Link>
@@ -27,8 +27,8 @@ function App() {
           </nav>
 
           <Switch>
-            <Route path="/expenses">
-              <ExpensesPage />
+            <Route path="/transactions">
+              <TransactionIndexPage />
             </Route>
             <Route path="/accounts">
               <AccountIndexPage />

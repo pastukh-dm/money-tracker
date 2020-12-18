@@ -5,9 +5,11 @@ import { AccountRaw } from '../../../models/MoneyAccount';
 import { UIDService } from '../../../services/UIDService';
 import { selectAllCurrency } from '../../../store/currency/currencySelectors';
 
+
 interface Props {
   onSubmit: (e: AccountRaw) => void
 }
+
 
 export function AccountCreateForm(props: Props) {
   const newAccountNameRef = useRef<HTMLInputElement>(null);
@@ -41,6 +43,7 @@ export function AccountCreateForm(props: Props) {
     }
     return { name, currency }
   }
+
   
   return (
     <form onSubmit={handleSubmit}>
