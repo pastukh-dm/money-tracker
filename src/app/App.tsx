@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
-import { CurrenciesPage } from './pages/CurrenciesPage/CurrenciesPage';
+import { CurrencyIndexPage } from './pages/CurrencyIndexPage/CurrencyIndexPage';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import { AccountIndexPage } from './pages/AccountIndexPage/AccountIndexPage';
@@ -34,7 +34,7 @@ function App() {
               <AccountIndexPage />
             </Route>
             <Route path="/currencies">
-              <CurrenciesPage />
+              <CurrencyIndexPage />
             </Route>
           </Switch>
 

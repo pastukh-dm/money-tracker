@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Page } from '../../components/Page/Page';
-import { MoneyAccount, AccountRaw } from '../../models/MoneyAccount';
+import { MoneyAccount, MoneyAccountPopulated } from '../../models/MoneyAccount';
 import { selectAllAccount } from '../../store/account/accountSelectors';
 import { addAccount, deleteAccount } from '../../store/account/accountSlice';
 import { AccountCreateForm } from './components/AccountCreateForm';
@@ -13,18 +13,18 @@ export function AccountIndexPage() {
   const accounts = useSelector(selectAllAccount);
 
   const handleSubmit = useCallback(
-    (e: AccountRaw) => dispatch(addAccount(e)), [dispatch]
+    (e: MoneyAccount) => dispatch(addAccount(e)), [dispatch]
   );
 
-  const handleDeleteClick = useCallback(
-    (account: MoneyAccount) => dispatch(deleteAccount(account.id)), [dispatch]
+  const handleDelete = useCallback(
+    (account: MoneyAccountPopulated) => dispatch(deleteAccount(account.id)), [dispatch]
   );
 
 
   return (
     <Page>
       <h1>Accounts</h1>
-      <AccountList items={accounts} onDelete={handleDeleteClick}/>
+      <AccountList items={accounts} onDelete={handleDelete}/>
       <AccountCreateForm onSubmit={handleSubmit} />
     </Page>
   )

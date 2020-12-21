@@ -1,17 +1,16 @@
 import React from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { Button } from '../../../components/Button/Button';
-import { MoneyAccount } from '../../../models/MoneyAccount';
+import { MoneyAccountPopulated } from '../../../models/MoneyAccount';
 
 
 interface Props {
-  items: MoneyAccount[],
-  onDelete: (e: MoneyAccount) => void
+  items: MoneyAccountPopulated[],
+  onDelete: (e: MoneyAccountPopulated) => void
 }
 
 
 export function AccountList(props: Props) {
-
 
   return (
     <table>

@@ -1,13 +1,13 @@
 import React, { useCallback, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { Button } from '../../../components/Button/Button';
-import { AccountRaw } from '../../../models/MoneyAccount';
+import { MoneyAccount } from '../../../models/MoneyAccount';
 import { UIDService } from '../../../services/UIDService';
 import { selectAllCurrency } from '../../../store/currency/currencySelectors';
 
 
 interface Props {
-  onSubmit: (e: AccountRaw) => void
+  onSubmit: (e: MoneyAccount) => void
 }
 
 
@@ -23,16 +23,15 @@ export function AccountCreateForm(props: Props) {
     if (!inputs) {
       return;
     }
-    if (newAccountNameRef.current) {
-      newAccountNameRef.current.value = '';
-    }
-    const account: AccountRaw = {
+    
+    const account: MoneyAccount = {
       id: UIDService.generate(),
       name: inputs.name,
-      currency: inputs.currency,
+      currencyId: inputs.currency,
       balance: 0
     }
     props.onSubmit(account);
+    resetForm();
   }, [newAccountNameRef]);
 
   function getAccountInputs() {
@@ -41,7 +40,13 @@ export function AccountCreateForm(props: Props) {
     if (!name || name.length === 0 || !currency) {
       return;
     }
-    return { name, currency }
+    return { name, currency };
+  }
+
+  function resetForm() {
+    if (newAccountNameRef.current) {
+      newAccountNameRef.current.value = '';
+    }
   }
 
   
@@ -59,5 +64,5 @@ export function AccountCreateForm(props: Props) {
       </select>
       <Button type="submit" text="Add" />
     </form>
-  )
+  );
 }

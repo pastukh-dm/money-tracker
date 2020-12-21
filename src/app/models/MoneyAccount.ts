@@ -3,10 +3,10 @@ import { Currency } from './Currency';
 export interface MoneyAccount {
   id: string,
   name: string,
-  currency: Currency | undefined,
+  currencyId: Currency['id'],
   balance: number
 }
 
-export type AccountRaw = Omit<MoneyAccount, 'currency'> & {
-  currency: Currency['id'],
+export type MoneyAccountPopulated = Omit<MoneyAccount, 'currencyId'> & {
+  currency: Currency | undefined,
 }

@@ -9,7 +9,7 @@ import { addCurrency, deleteCurrency } from '../../store/currency/currencySlice'
 
 import { FaTimes } from 'react-icons/all';
 
-export function CurrenciesPage() {
+export function CurrencyIndexPage() {
   const dispatch = useDispatch();
   const allCurrency = useSelector(selectAllCurrency);
 
