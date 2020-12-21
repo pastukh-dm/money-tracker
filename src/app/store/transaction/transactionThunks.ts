@@ -22,7 +22,6 @@ export function deleteTransactionAndUpdateAccount(payload: Transaction['id']) {
     await dispatch(deleteTransaction(payload));
     if (isTransaction(transaction)) {
       const balance = calculateAccountBalance(transaction.accountId, getState());
-      await dispatch(updateAccount({ id: transaction.accountId, changes: { balance } }));
     }
   }
 }
