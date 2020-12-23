@@ -3,7 +3,7 @@ import { MoneyAccount, MoneyAccountPopulated } from './MoneyAccount';
 export interface Transaction {
   id: string,
   amount: number,
-  // type: 'expense' | 'income'
+  date: string, // ISO format
   note?: string,
   accountId: MoneyAccount['id'],
 }

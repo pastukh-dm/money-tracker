@@ -22,7 +22,10 @@ export function Button(props: Props) {
   const content = useMemo(() => props.children || props.text, [props.children, props.text]);
   return (
     <button
-      className={clsx('Button', `_${props.variant}`)}
+      className={clsx('Button', `_${props.variant}`, {
+        '_disabled': props.disabled
+      })}
+      disabled={props.disabled}
       onClick={props.onClick}
     >
       {

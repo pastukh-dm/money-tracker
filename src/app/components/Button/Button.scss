@@ -65,6 +65,12 @@
     }
   }
 
+  &._disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
+
   &-Icon {
     display: inline-block;
     vertical-align: middle;
