@@ -1,3 +1,4 @@
+import { categorySlice } from './category/categorySlice';
 import { accountSlice } from './account/accountSlice';
 import { configureStore } from '@reduxjs/toolkit';
 import { currencySlice } from './currency/currencySlice';
@@ -11,7 +12,8 @@ export const store = configureStore({
   reducer: {
     currency: currencySlice.reducer,
     account: accountSlice.reducer,
-    transaction: transactionSlice.reducer
+    transaction: transactionSlice.reducer,
+    category: categorySlice.reducer
   }
 })
 

@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import { AccountIndexPage } from './pages/AccountIndexPage/AccountIndexPage';
 import { TransactionIndexPage } from './pages/TransactionIndexPage/TransactionIndexPage';
+import { CategoryIndexPage } from './pages/CategoryIndexPage/CategoryIndexPage';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
             <ul>
               <li>
                 <Link to="/transactions">Transactions</Link>
+              </li>
+              <li>
+                <Link to="/categories">Categories</Link>
               </li>
               <li>
                 <Link to="/accounts">Accounts</Link>
@@ -29,6 +33,9 @@ function App() {
           <Switch>
             <Route path="/transactions">
               <TransactionIndexPage />
+            </Route>
+            <Route path="/categories">
+              <CategoryIndexPage />
             </Route>
             <Route path="/accounts">
               <AccountIndexPage />
