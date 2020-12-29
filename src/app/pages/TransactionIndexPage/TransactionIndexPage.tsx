@@ -23,8 +23,9 @@ export function TransactionIndexPage() {
   return (
     <Page>
       <h1>Transactions</h1>
-      <TransactionList items={transactions} onDelete={handleDelete}/>
       <TransactionCreateForm onSubmit={handleSubmit}/>
+      <hr/>
+      <TransactionList items={transactions} onDelete={handleDelete}/>
     </Page>
   );
 }
