@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Button } from '../../../components/Button/Button';
+import { Input } from '../../../components/Input/Input';
 import { Transaction } from '../../../models/Transaction';
 import { UIDService } from '../../../services/UIDService';
 import { selectAllAccount } from '../../../store/account/accountSelectors';
@@ -96,7 +97,7 @@ export function TransactionCreateForm(props: Props) {
         </div>
       }
       <div className="TransactionCreateForm-Field">
-        <input
+        <Input
           ref={amountRef}
           type="number"
           placeholder="Amount"
@@ -107,7 +108,7 @@ export function TransactionCreateForm(props: Props) {
         {currentAccount?.currency?.name}
       </div>
       <div className="TransactionCreateForm-Field">
-        <input
+        <Input
           ref={noteRef}
           type="text"
           placeholder="Note"
@@ -116,7 +117,7 @@ export function TransactionCreateForm(props: Props) {
       </div>
 
       <div className="TransactionCreateForm-Field">
-        <input
+        <Input
           ref={dateRef}
           type="date"
           placeholder="Date"

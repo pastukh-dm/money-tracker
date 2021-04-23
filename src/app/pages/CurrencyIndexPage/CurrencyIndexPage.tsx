@@ -8,6 +8,7 @@ import { selectAllCurrency } from '../../store/currency/currencySelectors';
 import { addCurrency, deleteCurrency } from '../../store/currency/currencySlice';
 
 import { FaTimes } from 'react-icons/all';
+import { Input } from '../../components/Input/Input';
 
 export function CurrencyIndexPage() {
   const dispatch = useDispatch();
@@ -56,7 +57,7 @@ export function CurrencyIndexPage() {
       </ul>
 
       <form onSubmit={handleSubmit}>
-        <input ref={newCurrencyNameRef} type="text" />
+        <Input ref={newCurrencyNameRef} type="text" />
         <Button type="submit" text="Add"/>
       </form>
 

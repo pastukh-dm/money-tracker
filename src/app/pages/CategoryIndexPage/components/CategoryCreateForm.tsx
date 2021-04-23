@@ -1,5 +1,6 @@
 import React, { FormEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { Button } from '../../../components/Button/Button';
+import { Input } from '../../../components/Input/Input';
 import { Category, CategoryType } from '../../../models/Category';
 import { UIDService } from '../../../services/UIDService';
 
@@ -73,7 +74,7 @@ export function CategoryCreateForm(props: Props) {
             )
           }
         </select>
-        <input
+        <Input
           ref={nameRef}
           placeholder="Name"
           type="text"

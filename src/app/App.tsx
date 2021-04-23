@@ -1,5 +1,6 @@
+import './App.scss';
+
 import React, { useMemo } from 'react';
-import './App.css';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import { CurrencyIndexPage } from './pages/CurrencyIndexPage/CurrencyIndexPage';
 import { Provider } from 'react-redux';

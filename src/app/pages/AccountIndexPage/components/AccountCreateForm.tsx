@@ -1,6 +1,7 @@
 import React, { useCallback, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { Button } from '../../../components/Button/Button';
+import { Input } from '../../../components/Input/Input';
 import { MoneyAccount } from '../../../models/MoneyAccount';
 import { UIDService } from '../../../services/UIDService';
 import { selectAllCurrency } from '../../../store/currency/currencySelectors';
@@ -52,7 +53,7 @@ export function AccountCreateForm(props: Props) {
   
   return (
     <form onSubmit={handleSubmit}>
-      <input ref={newAccountNameRef} type="text" />
+      <Input ref={newAccountNameRef} type="text" />
       <select ref={newAccountCurrencyRef}>
         {
           currencies.map(currency =>
