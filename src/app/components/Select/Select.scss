@@ -1,0 +1,5 @@
+@import "./../Input/InputPlaceholder.scss";
+
+.Select {
+  @extend %Input;
+}

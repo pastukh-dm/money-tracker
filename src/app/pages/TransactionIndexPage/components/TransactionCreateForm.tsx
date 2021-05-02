@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/Input/Input';
+import { Select } from '../../../components/Select/Select';
 import { Transaction } from '../../../models/Transaction';
 import { UIDService } from '../../../services/UIDService';
 import { selectAllAccount } from '../../../store/account/accountSelectors';
@@ -81,19 +82,16 @@ export function TransactionCreateForm(props: Props) {
       {
         accounts && accounts.length > 0 &&
         <div className="TransactionCreateForm-Field">
-          <select
+          <Select
             ref={accountRef}
             defaultValue={accounts[0].id}
-          >
-            <option value="" hidden>Select account</option>
-            {
-              accounts.map(account =>
-                <option key={account.id} value={account.id} >
-                  {account.name} ({account.currency?.name})
-            </option>
-              )
-            }
-          </select>
+            options={[
+              { label: 'Select account', value: '', hidden: true },
+              ...accounts.map(account => (
+                { label: `${account.name} (${account.currency?.name})`, value: account.id }
+              ))
+            ]}
+          />
         </div>
       }
       <div className="TransactionCreateForm-Field">

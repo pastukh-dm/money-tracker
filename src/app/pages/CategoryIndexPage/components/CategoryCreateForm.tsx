@@ -1,6 +1,7 @@
 import React, { FormEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { Button } from '../../../components/Button/Button';
 import { Input } from '../../../components/Input/Input';
+import { Select } from '../../../components/Select/Select';
 import { Category, CategoryType } from '../../../models/Category';
 import { UIDService } from '../../../services/UIDService';
 
@@ -61,19 +62,14 @@ export function CategoryCreateForm(props: Props) {
   return (
     <div className="CategoryCreateForm">
       <form onSubmit={handleSubmit}>
-        <select
+        <Select
           ref={typeRef}
           defaultValue={inputs.type}
           onChange={(e) => handleInput('type', e.target.value)}
-        >
-          {
-            Object.values(CategoryType).map(type =>
-              <option key={type} value={type}>
-                {type}
-              </option>
-            )
-          }
-        </select>
+          options={Object.values(CategoryType).map(type => ({
+            label: type, value: type
+          }))}
+        />
         <Input
           ref={nameRef}
           placeholder="Name"

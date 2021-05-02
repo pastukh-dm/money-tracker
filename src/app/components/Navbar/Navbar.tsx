@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import './Navbar.scss';
 
 interface Props {
-  items: Array<{name: string, to: string}>
+  items: Array<{ name: string, to: string }>
 }
 
 
@@ -12,7 +12,14 @@ export function Navbar(props: Props) {
     <nav className="Navbar">
       {
         props.items.map((item) =>
-          <NavLink className="Navbar-Link" activeClassName="_active" to={item.to}>{item.name}</NavLink>
+          <NavLink
+            key={item.to}
+            className="Navbar-Link"
+            activeClassName="_active"
+            to={item.to}
+          >
+            {item.name}
+          </NavLink>
         )
       }
     </nav>

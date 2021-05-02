@@ -1,0 +1,11 @@
+@import "./../../../scss/variables.scss";
+
+%Input {
+  cursor: pointer;
+  border: 2px solid #bbb;
+  padding: 5px 10px;
+  height: 20px + (5px + 2px) * 2;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+}

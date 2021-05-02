@@ -1,7 +1,7 @@
 import './App.scss';
 
 import React, { useMemo } from 'react';
-import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { CurrencyIndexPage } from './pages/CurrencyIndexPage/CurrencyIndexPage';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
@@ -20,7 +20,7 @@ const routeItems = [
 function App() {
   const navbarItems = useMemo(
     () => routeItems.map(item => ({ to: item.path, name: item.name })),
-    [routeItems]
+    []
   );
   return (
     <Provider store={store}>
@@ -31,7 +31,7 @@ function App() {
           <Switch>
             {
               routeItems.map(item =>
-                <Route path={item.path}>
+                <Route key={item.path} path={item.path}>
                   {item.page}
                 </Route>
               )
